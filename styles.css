@@ -1,0 +1,58 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Изменён шрифт на более современный */
+    margin: 0;
+    padding: 0;
+    background-color: #e9eff1; /* Светло-серый фон */
+}
+
+header {
+    background: #4a90e2; /* Синий фон */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #003f5c; /* Тёмно-синий бордюр */
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px; /* Ограничение ширины секций */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+}
+
+h2 {
+    color: #003f5c; /* Тёмно-синий цвет заголовков */
+}
+
+.project {
+    margin: 15px 0;
+    padding: 15px;
+    border: 2px solid #4a90e2; /* Граница синим цветом */
+    border-radius: 5px;
+    background-color: #f4f9fc; /* Светлый фон для проектов */
+}
+
+.project a {
+    color: #4a90e2; /* Синий цвет для ссылок */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em; /* Увеличен размер шрифта */
+}
+
+.project a:hover {
+    text-decoration: underline;
+    color: #003f5c; /* Тёмно-синий при наведении */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #4a90e2; /* Синий фон */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid #003f5c; /* Тёмно-синий бордюр */
+}

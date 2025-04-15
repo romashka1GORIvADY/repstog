@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Анисимов Р.Э.</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Простое стилизование для модальных окон */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #4a90e2;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4a90e2; /* Синий фон кнопок */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003f5c; /* Тёмно-синий при наведении */
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Для летящей кнопки */
+        .flying-button {
+            position: absolute;
+            width: 50px; /* Ширина изображения */
+            height: 50px; /* Высота изображения */
+            cursor: pointer;
+        }
+
+        /* Стили для форм в модальных окнах */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #4a90e2; /* Синий цвет при фокусе */
+        }
+        button[type="submit"] {
+            background-color: #4a90e2; /* Синий фон кнопки отправки */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #003f5c; /* Тёмно-синий при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Привет, я Ромчик!</h1>
+        <p>Я начинающий программист.</p>
+        <button id="registerBtn">Регистрация</button>
+        <button id="loginBtn">Авторизация</button>
+    </header>
+
+    <section id="about">
+        <h2>О себе</h2>
+        <p>Я увлекаюсь программированием и постоянно ищу новые проекты для развития своих навыков. Люблю разрабатывать веб-приложения и изучать новые технологии!</p>
+    </section>
+
+    <section id="projects">
+        <h2>Мои проекты</h2>
+        <div class="project">
+            <a href="#">Проект 1</a>
+            <p>Приложение для автоматизации продажи/покупки авто в автосалоне. В нем имелась возможность посмотреть авто, находящиеся на продаже, а также записаться на посещение автосалона для того, чтобы продать свой автомобиль автосалону.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Навыки</h2>
+        <ul>
+            <li>HTML/CSS</li>
+            <li>C#</li>
+            <li>Разработка веб-приложений</li>
+            <li>Работа с базами данных</li>
+        </ul>
+    </section>
+
+    <section id="facts">
+        <h2>Интересные факты обо мне</h2>
+        <ul>
+            <li>У меня есть песик, и его зовут Тузик.</li>
+            <li>Мое хобби — я очень люблю ходить в походы, так же имею 1 категорию по спортивному туризму и скалолазанию!</li>
+        </ul>
+    </section>
+
+    <section id="reviews">
+        <h2>Отзывы</h2>
+        <p>"Ромчик — талантливый программист с отличным подходом к работе!" - Друг</p>
+        <p>"Работать с Ромчиком было настоящим удовольствием. Он всегда проявляет инициативу и желание учиться!" - Наставник</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Email: <a href="mailto:romchik@yandex.ru">romchik@yandex.ru</a></p>
+        <p>LinkedIn: <a href="https://ru.wikipedia.org/wiki/%D0%94%D1%83%D1%80%D0%BE%D0%B2,_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87" target="_blank">Мой профиль</a></p>
+    </section>
+
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Регистрация</h2>
+            <form>
+                <label for="reg-username">Имя пользователя:</label>
+                <input type="text" id="reg-username" name="reg-username" required>
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" name="reg-email" required>
+                <label for="reg-password">Пароль:</label>
+                <input type="password" id="reg-password" name="reg-password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Авторизация</h2>
+            <form>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Летающая кнопка -->
+    <img class="flying-button" id="flyingButton" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZlM2iN1yy9rkxNG_oanmn5KFTnUSGsE99wfMlV_X1erx5e89OcIM8X4kiUf0l56hInPM&usqp=CAU" alt="Летающая кнопка">
+
+    <!-- Модальное окно для гифки -->
+    <div id="gifModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeGif">&times;</span>
+            <h2>котик</h2>
+            <img src="https://img1.picmix.com/output/stamp/normal/8/7/6/6/826678_d817d.gif" alt="Гифка" style="width: 100%; border-radius: 8px;">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ромулик</p>
+    </footer>
+
+    <script>
+        // Получение модальных окон
+        var registrationModal = document.getElementById("registrationModal");
+        var loginModal = document.getElementById("loginModal");
+        var gifModal = document.getElementById("gifModal");
+        var flyingButton = document.getElementById("flyingButton");
+
+        // Получение кнопок
+        var registerBtn = document.getElementById("registerBtn");
+        var loginBtn = document.getElementById("loginBtn");
+        var closeRegister = document.getElementById("closeRegister");
+        var closeLogin = document.getElementById("closeLogin");
+        var closeGif = document.getElementById("closeGif");
+
+        // Открыть модальное окно регистрации
+        registerBtn.onclick = function () {
+            registrationModal.style.display = "block";
+        }
+
+        // Открыть модальное окно авторизации
+        loginBtn.onclick = function () {
+            loginModal.style.display = "block";
+        }
+
+        // Закрыть модальное окно регистрации
+        closeRegister.onclick = function () {
+            registrationModal.style.display = "none";
+        }
+
+        // Закрыть модальное окно авторизации
+        closeLogin.onclick = function () {
+            loginModal.style.display = "none";
+        }
+
+        // Закрыть окно с гифкой
+        closeGif.onclick = function () {
+            gifModal.style.display = "none";
+        }
+
+        // Закрыть модальную форму, если нажать вне формы
+        window.onclick = function (event) {
+            if (event.target == registrationModal) {
+                registrationModal.style.display = "none";
+            }
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            if (event.target == gifModal) {
+                gifModal.style.display = "none";
+            }
+        }
+
+        // Летящая кнопка
+        function moveButton() {
+            var button = flyingButton;
+            button.style.left = Math.random() * (window.innerWidth - 50) + "px";
+            button.style.top = Math.random() * (window.innerHeight - 50) + "px";
+        }
+
+        setInterval(moveButton, 1000); // Изменяем позицию кнопки каждые 1 секунду
+
+        // Открыть модальное окно с гифкой при нажатии на летящую кнопку
+        flyingButton.onclick = function () {
+            gifModal.style.display = "block";
+        }
+    </script>
+</body>
+</html>

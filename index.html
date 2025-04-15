@@ -6,6 +6,31 @@
     <title>Портфолио Анисимов Р.Э.</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            background-color: #181818; /* Темный фон страницы */
+            color: #ffffff; /* Белый текст */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #282828; /* Темный фон заголовка */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #4a90e2; /* Синий цвет заголовков */
+        }
+
+        a {
+            color: #4a90e2; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
         /* Простое стилизование для модальных окон */
         .modal {
             display: none;
@@ -16,21 +41,22 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .modal-content {
-            background-color: #ffffff;
+            background-color: #2a2a2a; /* Темный фон для модального окна */
             margin: 15% auto;
             padding: 20px;
             border: none;
             border-radius: 8px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
             width: 300px;
+            color: #ffffff; /* Белый текст в модальном окне */
         }
 
         .close {
-            color: #aaa;
+            color: #aaa; /* Цвет для кнопки закрытия */
             float: right;
             font-size: 28px;
             font-weight: bold;
@@ -38,7 +64,7 @@
 
         .close:hover,
         .close:focus {
-            color: #4a90e2;
+            color: #4a90e2; /* Цвет кнопки закрытия при наведении */
             text-decoration: none;
             cursor: pointer;
         }
@@ -77,6 +103,7 @@
             display: flex;
             flex-direction: column;
         }
+        
         input[type="text"],
         input[type="email"],
         input[type="password"] {
@@ -84,12 +111,16 @@
             padding: 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
+            background-color: #404040; /* Темный фон для полей ввода */
+            color: #ffffff; /* Белый текст в полях ввода */
         }
+        
         input[type="text"]:focus,
         input[type="email"]:focus,
         input[type="password"]:focus {
             border-color: #4a90e2; /* Синий цвет при фокусе */
         }
+        
         button[type="submit"] {
             background-color: #4a90e2; /* Синий фон кнопки отправки */
             border: none;
@@ -98,6 +129,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+        
         button[type="submit"]:hover {
             background-color: #003f5c; /* Тёмно-синий при наведении */
         }
@@ -116,13 +148,13 @@
         <p>Я увлекаюсь программированием и постоянно ищу новые проекты для развития своих навыков. Люблю разрабатывать веб-приложения и изучать новые технологии!</p>
     </section>
 
-<section id="projects">
-    <h2>Мои проекты</h2>
-    <div class="project">
-        <a href="https://romashka1gorivady.github.io/car/" target="_blank">Проект 1</a>
-        <p>Сайт для автосалона. В нем имелась возможность посмотреть авто, находящиеся на продаже, а также записаться на посещение автосалона для того, чтобы продать свой автомобиль автосалону.</p>
-    </div>
-</section>
+    <section id="projects">
+        <h2>Мои проекты</h2>
+        <div class="project">
+            <a href="https://romashka1gorivady.github.io/car/" target="_blank">Проект 1</a>
+            <p>Сайт для автосалона. В нем имелась возможность посмотреть авто, находящиеся на продаже, а также записаться на посещение автосалона для того, чтобы продать свой автомобиль автосалону.</p>
+        </div>
+    </section>
 
     <section id="skills">
         <h2>Навыки</h2>
